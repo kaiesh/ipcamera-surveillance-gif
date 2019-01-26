@@ -59,10 +59,10 @@ class Config{
   //How much veritcal space should be left for your frame label text (which is approx 10px high and has a 5px margin at the top)
   public static $FRAME_LABEL_Y = 20;
 
-  //What should the final dimensions of your surveillence graphic be (including frame label space)?
+  //What should the final dimensions of your surveillance graphic be (including frame label space)?
   public static $FRAME_DIMENSIONS = array("x"=>640, "y"=>340);
 
-  //How many rows and columns of images should exist on the surveillence frame?
+  //How many rows and columns of images should exist on the surveillance frame?
   public static $FRAME_LAYOUT = array("cols"=>3, "rows"=>2);
 
 

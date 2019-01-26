@@ -10,7 +10,7 @@ I wanted this to run on my House NAS so that an image was captured every 5 secon
 
 ## Getting it up and running
 
-The only file you should need to modify is Config.php. Once your configuration is set, you should be able to execute the cameras.cli.php file and output surveillence frames exactly as you have configured.
+The only file you should need to modify is Config.php. Once your configuration is set, you should be able to execute the cameras.cli.php file and output surveillance frames exactly as you have configured.
 
 You will probably need to create and/or manage perms on the directories that you specify for the graphics to be stored/created.
 
