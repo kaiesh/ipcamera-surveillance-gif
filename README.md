@@ -1,5 +1,9 @@
 # ipcamera-surveillance-gif
 
+![Sample script output](https://raw.githubusercontent.com/kaiesh/ipcamera-surveillance-gif/master/camfile.jpg)
+
+_Generate surveillance frames from IP cameras like the above_
+
 ## Purpose
 
 Creation of a single frame graphic from all IP camera feeds that I own, in order to make viewing easier. Additionally, auto archival of these frames into a single animated GIF that can be easily reviewed if required.
