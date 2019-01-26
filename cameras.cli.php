@@ -34,7 +34,7 @@ while(Config::$LOOP_COUNT < 0 || $x < Config::$LOOP_COUNT){
 }
 
 //With the latest JPG frames made, now check if these need to be archived into a GIF
-if (Config::$CONVERT_TIME=="*" || date("H") === Config::$CONVERT_TIME){
+if (!is_file(Config::$GIF_TARGET."gif.lock") && (Config::$CONVERT_TIME=="*" || date("H") === Config::$CONVERT_TIME)){
 	$files = scandir(Config::$JPEG_LOCATION);
 	$tgt_file = Config::$GIF_TARGET.date("Y-m-d-H-i")."gif";
 	$gif_frame_src = array();
@@ -55,6 +55,10 @@ if (Config::$CONVERT_TIME=="*" || date("H") === Config::$CONVERT_TIME){
 			}
 		}
 		if (count($gif_frame_src) > 2){
+			//deploy a lock file for GIF processing
+			$lh = fopen(Config::$GIF_TARGET."gif.lock", "w");
+			fwrite($lh, time());
+			fclose($lh);
 
 			$tgt_file = Config::$GIF_TARGET.str_replace(array(Config::$JPEG_LOCATION,".jpg"),
 			"", $gif_frame_src[0])."-to-".str_replace(array(Config::$JPEG_LOCATION,".jpg"),"",$gif_frame_src[count($gif_frame_src)-1]).".gif";
@@ -71,6 +75,9 @@ if (Config::$CONVERT_TIME=="*" || date("H") === Config::$CONVERT_TIME){
 			unset($gc); unset($gifBinary); unset($gif_frame_time); unset($files); unset($filecount);
 			echo "OK. Deleted ".count($gif_frame_src)." files\n";
 			unset($gif_frame_src);
+
+			//remove lock file
+			unlink(Config::$GIF_TARGET."gif.lock");
 		}else{
 			echo "ERR: **** NO GIF ANIM MADE ****\n";
 		}
