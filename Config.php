@@ -42,18 +42,21 @@ class Config{
   //Where should GIF animaion archives be stored?
   public static $GIF_TARGET = "./gifs/";
 
+  //While JPGs are being processed into GIFs where should they be stored?
+  public static $PROCESSING_LOCATION = "./processing/";
+
   //*************************************************
   //***** Details for each surveillance frame *******
   //*************************************************
 
   //Most IP cameras allow you to access the current frame via a specific URL, simply create an array of all of your camera frame URLs, and the expected source dimensions
   public static $CAMERA_IMAGE_URL_ARR = array(
-    array("url"=>'http://camera.url:port/endpoint', "x"=>640, "y"=>480),
-    array("url"=>'http://camera.url:port/endpoint', "x"=>640, "y"=>480),
-    array("url"=>'http://camera.url:port/endpoint', "x"=>640, "y"=>480),
-    array("url"=>'http://camera.url:port/endpoint', "x"=>640, "y"=>480),
-    array("url"=>'http://camera.url:port/endpoint', "x"=>640, "y"=>480),
-    array("url"=>'http://camera.url:port/endpoint', "x"=>640, "y"=>480)
+    array("url"=>'http://www.audubonprinters.com/libraryghost/libraryghost/kids/kids000M.jpg', "x"=>640, "y"=>480),
+    array("url"=>'http://www.audubonprinters.com/libraryghost/libraryghost/hallway/000M.jpg', "x"=>640, "y"=>480),
+    array("url"=>'http://www.audubonprinters.com/libraryghost/libraryghost/Research/000M.jpg', "x"=>1280, "y"=>800),
+    array("url"=>'http://webcam.iowa.uiowa.edu/live/readImage.asp', "x"=>1280, "y"=>720),
+    array("url"=>'http://www.zermatt.ch/html/bergbahnen/webcams/zermatt.jpg', "x"=>640, "y"=>480),
+    array("url"=>'http://zermatt.ch/html/bergbahnen/webcams/bahnhof.jpg', "x"=>800, "y"=>600)
   );
 
   //How much veritcal space should be left for your frame label text (which is approx 10px high and has a 5px margin at the top)
