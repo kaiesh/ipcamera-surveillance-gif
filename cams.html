@@ -1,0 +1,26 @@
+<html>
+<title>Cams</title>
+</head>
+<body>
+<img src="camfile.jpg" id="camoutput" style="top:50%;margin-top:-160px;left:50%;margin-left:-320px;position:absolute;" />
+
+<script>
+var img = new Image();
+function load_image(){
+        //img = new Image();
+        var x = document.getElementById("camoutput");
+
+        img.onload = function(){
+                x.src = window.img.src;
+	//	delete window.img;
+        };
+        img.src = "camfile.jpg?t="+ (new Date().getTime());
+}
+
+setInterval(load_image, 3000);
+</script>
+
+
+</body>
+</html>
+
